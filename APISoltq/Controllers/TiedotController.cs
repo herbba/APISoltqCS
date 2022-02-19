@@ -17,6 +17,7 @@ namespace APISoltq.Controllers
         
         [HttpGet(Name = "GetTiedot")]
         //Tällä hetkellä ottaa vain hakaniemen tiedot mutta voidaan helposti laajentaa
+        //voitaisiin laittaa ottamaan aikaväli ja halutaanko vaikka viikottaista dataa yms.
 
         public string Get(int id)
         {
@@ -43,7 +44,9 @@ namespace APISoltq.Controllers
         public static Sahko[] TiedotHae(int id)
         {
             //Tässä kohtaa id päättäisi mistä osoitteesta lähdettäisiin etsimään tietoa mutta tässä kohtaa olen vain hardkoodannut tämän etsimään oikean datan
-            //mutta oikeasti laittaisin todennäköisesti taulukon josta id toimisi osoitteen idnä.
+            //mutta oikeasti laittaisin todennäköisesti taulukon josta id toimisi osoitteen idnä. Tämä muokkaisi myös vaikka viikottaiseksi dataksi jota tässä tapauksessa ei
+            //saa suoraan apista mutta nämä voitaisiin ottaa päivittäisestä datasta ja vain laittaa viikko muotoon yksinkertaisella silmukalla tämä olisi myös ratkaisuni jos saatavilla
+            //olisi vain viikottainen data
             using (WebClient wc = new WebClient())
 
             {
